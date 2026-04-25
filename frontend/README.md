@@ -1,27 +1,36 @@
-🏙️ Projeto Cidade (CivicConnect)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-📖 Sobre o Projeto
-Este é um Web App Responsivo focado em Tecnologia Cívica. O sistema integra um mapa da cidade onde os moradores podem reportar problemas urbanos, permitindo que a comunidade e os órgãos responsáveis visualizem e organizem as demandas.
+## Getting Started
 
-🚀 Funcionalidades do MVP
-Visão Cidadão: Visualização de marcadores simples no mapa indicando onde estão os problemas.
-Reporte de Problemas: Envio de formulário contendo título, categoria (ex: buraco, luz, lixo), foto e nível de gravidade.
-Visão Supervisor: Acesso a um dashboard para validar e moderar os chamados, aprovando ou rejeitando os relatos da comunidade.
+First, run the development server:
 
-🛠️ Stack Tecnológica
-Front-end: React.js / Next.js, Tailwind CSS e react-leaflet (Mapas).
-Back-end: Node.js / Java / C#.
-Banco de Dados: PostgreSQL com a extensão espacial PostGIS.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-👥 A Equipe
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-[Seu Nome] - Product Owner / Full-Stack 
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-[Nome do Colega 1] - Tech Lead / Back-end 
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-[Nome do Colega 2] - Desenvolvedor Front-end 
+## Learn More
 
-[Nome do Colega 3] - Desenvolvedor Front-end 
+To learn more about Next.js, take a look at the following resources:
 
-⚙️ Como rodar o projeto localmente
-(Instruções de instalação serão adicionadas ao longo do desenvolvimento)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
