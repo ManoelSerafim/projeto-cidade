@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function FormularioProblema() {
   // Estados para guardar o que o usuário digita
-  const [titulo, setTitulo] = useState('');
-  const [categoria, setCategoria] = useState('');
-  const [gravidade, setGravidade] = useState('');
+  const [titulo, setTitulo] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [gravidade, setGravidade] = useState("");
 
   // Função que roda quando o botão de enviar é clicado
   const handleSubmit = (e: React.FormEvent) => {
@@ -24,9 +24,10 @@ export default function FormularioProblema() {
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Campo de Texto: Título */}
         <div>
-          <label className="block text-sm font-medium text-blue-700">Título do Problema <span className="text-red-500">*</span>
+          <label htmlFor="titulo" className="block text-sm font-medium text-blue-700">Título do Problema <span className="text-red-500">*</span>
             </label>
           <input
+            id="titulo"
             type="text"
             required
             className="text-gray-900 mt-1 block w-full rounded-md border-gray-300 border shadow-sm p-3 focus:border-blue-500 focus:ring-blue-500 outline-none"
@@ -38,9 +39,10 @@ export default function FormularioProblema() {
 
         {/* Menu de Seleção: Categoria */}
         <div>
-          <label className="block text-sm font-medium text-blue-700">Categoria <span className="text-red-500">*</span>
+          <label htmlFor="categoria" className="block text-sm font-medium text-blue-700">Categoria <span className="text-red-500">*</span>
             </label>
           <select
+            id="categoria"
             required
             className="text-gray-900 mt-1 block w-full rounded-md border-gray-900 border shadow-sm p-3 focus:border-blue-500 focus:ring-blue-500 outline-none bg-white"
             value={categoria}
@@ -56,9 +58,10 @@ export default function FormularioProblema() {
 
         {/* Menu de Seleção: Gravidade */}
         <div>
-          <label className="block text-sm font-medium text-blue-700">Nível de Gravidade <span className="text-red-500">*</span>
+          <label htmlFor="gravidade" className="block text-sm font-medium text-blue-700">Nível de Gravidade <span className="text-red-500">*</span>
             </label>
           <select
+            id="gravidade"
             required
             className="text-gray-900 mt-1 block w-full rounded-md border-gray-900 border shadow-sm p-3 focus:border-blue-500 focus:ring-blue-500 outline-none bg-white"
             value={gravidade}
@@ -73,8 +76,9 @@ export default function FormularioProblema() {
 
         {/* Upload de Imagem */}
         <div>
-          <label className="block text-sm font-medium text-blue-700 mb-1">Foto (Opcional)</label>
+          <label htmlFor="foto" className="block text-sm font-medium text-blue-700 mb-1">Foto (Opcional)</label>
           <input
+            id="foto"
             type="file"
             accept="image/*"
             className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
