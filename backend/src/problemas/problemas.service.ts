@@ -8,6 +8,13 @@ type Problema = {
     longitude: number;
 }
 
+export type SalvarProblemaDto = {
+    titulo: string;
+    gravidade: 'leve' | 'moderada' | 'grave';
+    latitude: number;
+    longitude: number;
+}
+
 @Injectable()
 export class ProblemasService {
 
@@ -22,4 +29,13 @@ export class ProblemasService {
     listarProblemas() {
         return this.problemas;
     }
+    salvarProblema(dados: SalvarProblemaDto) {
+        const novoProblema: Problema = {
+            id: this.problemas.length + 1,
+            ...dados
+        };
+        this.problemas.push(novoProblema);
+        return novoProblema;
+    }
 }
+
