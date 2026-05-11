@@ -1,15 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ProblemasModule } from './problemas/problemas.module';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [ProblemasModule],
-  controllers: [],
-  providers: [],
-  
-  imports: [TypeOrmModule.forRoot({
+  imports: [ProblemasModule, TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'db.tiinhdeorwhhxymrjoln.supabase.co',
       port: 5432,
@@ -24,8 +18,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
           rejectUnauthorized: false,
         },
       },
-    }),],
-  controllers: [AppController],
-  providers: [AppService],
+    }), ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
