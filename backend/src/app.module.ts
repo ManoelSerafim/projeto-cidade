@@ -8,7 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host: 'db.tiinhdeorwhhxymrjoln.supabase.co',
       port: 5432,
       username: 'postgres',
-      password: '8W,zx7?7NXBi3qG',
+      password: 'SdkrlDHQHWCF',
       database: 'postgres',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false, // Use migrations em produção!
