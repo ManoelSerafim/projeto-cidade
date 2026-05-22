@@ -1,8 +1,11 @@
 
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
+import { ManyToOne, JoinColumn } from 'typeorm';
+import { Categorias } from '../categorias/categorias.entity';
+import { Usuarios } from '../usuarios/usuarios.entity';
 
-@Entity('problemas')
-export class Problema {
+@Entity('problems')
+export class Problemas {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
@@ -12,8 +15,9 @@ export class Problema {
   @Column({name: 'problem_title', type: 'text'})
   problem_title!: string;
 
-  @Column({name: 'user_id', type: 'uuid'})
-  user_id!: string;
+  @ManyToOne(() => Usuarios)
+  @JoinColumn({ name: 'user_id' })
+  user_id!: Usuarios;
 
   @Column({name: 'problem_gravity', type: 'text'})
   problem_gravity!: string;
@@ -21,9 +25,10 @@ export class Problema {
   @Column({name: 'problem_latitude', type: 'float8'})
   problem_latitude!: number;
 
-  @Column({name: 'problem_longitude', type: 'float8'})
-  problem_longitude!: number;
+  @Column({name: 'problem_longituded', type: 'float8'})
+  problem_longituded!: number;
 
-  @Column({name: 'categories_id', type: 'uuid'})
-  categories_id!: string;
+  @ManyToOne(() => Categorias)
+  @JoinColumn({ name: 'categories_id' })
+  categories_id!: Categorias;
 }
