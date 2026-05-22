@@ -1,24 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ProblemasModule } from './problemas/problemas.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [ProblemasModule, TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'db.tiinhdeorwhhxymrjoln.supabase.co',
-      port: 5432,
-      username: 'postgres',
-      password: 'SdkrlDHQHWCF',
-      database: 'postgres',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: false, // Use migrations em produção!
-      ssl: true, // Supabase exige SSL
-      extra: {
-        ssl: {
-          rejectUnauthorized: false,
-        },
-      },
-    }), ],
+  imports: [ProblemasModule],
   controllers: [],
   providers: [],
 })

@@ -1,18 +1,14 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
-import { ProblemasService, SalvarProblemaDto } from './problemas.service';
+import { ProblemasService } from './problemas.service';
+import { Problema } from './problema.entity';
 
 @Controller('problemas')
 export class ProblemasController {
     constructor(private readonly problemasService: ProblemasService) {}
 
     @Get()
-    listarProblemas() {
-        return this.problemasService.listarProblemas();
-    }
-
-    @Post()
-    salvarProblema(@Body() dados: SalvarProblemaDto) {
-        return this.problemasService.salvarProblema(dados);
+    async listarProblemas(): Promise<Problema[]> {
+        return this.problemasService.findAll();
     }
 }
 
