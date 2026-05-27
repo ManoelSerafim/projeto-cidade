@@ -17,7 +17,7 @@ export class Problemas {
 
   @ManyToOne(() => Usuarios)
   @JoinColumn({ name: 'user_id' })
-  user_id!: Usuarios;
+  user!: Usuarios;
 
   @Column({name: 'problem_gravity', type: 'text'})
   problem_gravity!: string;
@@ -30,5 +30,5 @@ export class Problemas {
 
   @ManyToOne(() => Categorias)
   @JoinColumn({ name: 'categories_id' })
-  categories_id!: Categorias;
+  category!: Categorias;
 }

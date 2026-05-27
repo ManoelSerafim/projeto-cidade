@@ -1,19 +1,15 @@
 
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, CreateDateColumn } from 'typeorm';
 import { ManyToOne, JoinColumn } from 'typeorm';
 import { Categorias } from '../categorias/categorias.entity';
 
 @Entity('users')
 export class Usuarios {
-   @PrimaryGeneratedColumn()
-  id!: number;
 
-  @Column({
-    name: 'user_id',
+  @PrimaryColumn({
     type: 'uuid',
-    unique: true,
   })
-  user_id!: string;
+  id!: string;
 
   @Column({
     name: 'user_name',
@@ -38,7 +34,7 @@ export class Usuarios {
   @CreateDateColumn({
     name: 'created_at',
     type: 'timestamptz',
-    default: () => 'CURRENT_TIMESTAMP',
   })
   created_at!: Date;
 }
+
