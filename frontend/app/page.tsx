@@ -1,9 +1,15 @@
-import FormularioProblema from "../components/FormularioProblema";
+"use client";
+
+import dynamic from "next/dynamic";
+
+const MapaCidade = dynamic(() => import("../components/MapaCidade"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 p-4">
-      <FormularioProblema />
+    <main className="min-h-screen bg-slate-950">
+      <MapaCidade />
     </main>
   );
 }
